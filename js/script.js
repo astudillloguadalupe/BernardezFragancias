@@ -12,6 +12,13 @@ const catalogo = document.getElementById("catalogo")
 
 const botonesFiltro = document.querySelectorAll(".filtro")
 
+const inputBuscar = document.getElementById("buscar")
+
+
+let filtroActual = "todos"
+
+let busqueda = ""
+
 
 function crearProducto(producto) {
 
@@ -74,7 +81,31 @@ function crearProducto(producto) {
 }
 
 
+function normalizar(texto) {
+
+    return texto
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim()
+
+}
+
+
 function mostrarCategoria(categoria) {
+
+    const q = normalizar(busqueda)
+
+    const lista = PRODUCTS[categoria].filter(function (producto) {
+
+        return normalizar(
+            producto.name + " " + producto.brand
+        ).includes(q)
+
+    })
+
+    if (lista.length === 0) return 0
+
 
     const titulo = document.createElement("h2")
 
@@ -83,7 +114,7 @@ function mostrarCategoria(categoria) {
     catalogo.appendChild(titulo)
 
 
-    PRODUCTS[categoria].forEach(function (producto) {
+    lista.forEach(function (producto) {
 
         catalogo.appendChild(
             crearProducto(producto)
@@ -91,33 +122,87 @@ function mostrarCategoria(categoria) {
 
     })
 
+    return lista.length
+
+}
+
+
+function mostrarSinResultados() {
+
+    const texto = busqueda.trim()
+
+    const mensaje = encodeURIComponent(
+        `Hola! Estoy buscando "${texto}" y no lo vi en el catálogo. ¿Lo tienen o pueden conseguirlo?`
+        
+    )
+
+
+    const aviso = document.createElement("div")
+
+    aviso.className = "vacio"
+
+
+    const titulo = document.createElement("h3")
+
+    titulo.textContent = "No encontramos “" + texto + "”"
+
+
+    const detalle = document.createElement("p")
+
+    detalle.textContent =
+        "Puede que no esté en el catálogo, pero consultanos: " +
+        "lo buscamos o te recomendamos uno parecido."
+
+
+    const enlace = document.createElement("a")
+
+    enlace.href = `https://wa.me/${WA}?text=${mensaje}`
+    enlace.target = "_blank"
+    enlace.rel = "noopener"
+    enlace.textContent = "Consultar por WhatsApp →"
+
+
+    aviso.append(titulo, detalle, enlace)
+
+    catalogo.appendChild(aviso)
+
 }
 
 
 function mostrarCatalogo(filtro) {
 
+    filtroActual = filtro
+
     catalogo.innerHTML = ""
 
 
-    if (filtro === "todos") {
-
-        mostrarCategoria("masculinos")
-
-        mostrarCategoria("femeninos")
-
-        mostrarCategoria("unisex")
-
-        return
-    }
+    const categorias =
+        filtro === "todos"
+            ? ["masculinos", "femeninos", "unisex"]
+            : PRODUCTS[filtro] ? [filtro] : []
 
 
-    if (PRODUCTS[filtro]) {
+    let total = 0
 
-        mostrarCategoria(filtro)
+    categorias.forEach(function (categoria) {
 
-    }
+        total += mostrarCategoria(categoria)
+
+    })
+
+
+    if (total === 0) mostrarSinResultados()
 
 }
+
+
+inputBuscar.addEventListener("input", function () {
+
+    busqueda = inputBuscar.value
+
+    mostrarCatalogo(filtroActual)
+
+})
 
 
 botonesFiltro.forEach(function (boton) {

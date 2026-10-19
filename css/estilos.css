@@ -407,3 +407,66 @@ footer a.wa:hover {
     }
 
 }
+
+
+/* BUSCADOR */
+
+.buscador {
+    padding: 24px 0 0;
+}
+
+.buscador input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid var(--ln);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--tx);
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.buscador input::placeholder {
+    color: var(--mu);
+}
+
+.buscador input:focus {
+    border-color: var(--tx);
+}
+
+.filtros {
+    padding-top: 18px;
+}
+
+
+/* SIN RESULTADOS */
+
+.vacio {
+    padding: 56px 0;
+    text-align: center;
+}
+
+.vacio h3 {
+    margin-bottom: 12px;
+}
+
+.vacio p {
+    margin: 0 auto 24px;
+    max-width: 420px;
+    color: var(--mu);
+    font-size: 15px;
+}
+
+.vacio a {
+    display: inline-block;
+    padding: 16px 28px;
+    border-radius: 3px;
+    background: #f3f2ee;
+    color: #111111;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+}

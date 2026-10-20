@@ -154,6 +154,22 @@ const PRODUCTS = {
             image: "./imagenes/bharara-king-gold-edition.jpg"
         }
 
+                {
+            name: "Hawas London For Him",
+            brand: "Rasasi",
+            ml: "100 ml",
+            price: "$39.900",
+            image: "./imagenes/rasasi-hawas-london.jpg"
+        },
+
+        {
+            name: "Hawas Elixir",
+            brand: "Rasasi",
+            ml: "50 ml",
+            price: "$29.900",
+            image: "./imagenes/rasasi-hawas-elixir.jpg"
+        }
+
     ],
 
 
@@ -287,8 +303,31 @@ const PRODUCTS = {
             image: "./imagenes/rayhaan-divine.jpg"
         }
 
-    ],
+                {
+            name: "Her Confession",
+            brand: "Lattafa",
+            ml: "100 ml",
+            price: "$59.900",
+            image: "./imagenes/lattafa-her-confession.jpg"
+        },
 
+        {
+            name: "Vulcan Baie",
+            brand: "French Avenue",
+            ml: "100 ml",
+            price: "$49.900",
+            image: "./imagenes/french-avenue-vulcan-baie.jpg"
+        },
+
+        {
+            name: "Eclaire Perfume Set Luxury Collection",
+            brand: "Lattafa",
+            ml: "5 x 30 ml",
+            price: "$51.900",
+            image: "./imagenes/lattafa-eclaire-set-luxury-collection.jpg"
+        }
+
+    ],
 
     unisex: [
 
@@ -474,6 +513,61 @@ const PRODUCTS = {
             ml: "100 ml",
             price: "$49.900",
             image: "./imagenes/french-avenue-aromatix-teas-me.jpg"
+        }
+                {
+            name: "Royal Amber",
+            brand: "Orientica",
+            ml: "100 ml",
+            price: "$44.900",
+            image: "./imagenes/orientica-royal-amber.jpg"
+        },
+
+        {
+            name: "Badee Al Oud Oud For Glory",
+            brand: "Lattafa",
+            ml: "100 ml",
+            price: "$39.900",
+            image: "./imagenes/lattafa-badee-al-oud-oud-for-glory.jpg"
+        },
+
+        {
+            name: "Musamam White Intense",
+            brand: "Lattafa",
+            ml: "100 ml",
+            price: "$44.900",
+            image: "./imagenes/lattafa-musamam-white-intense.jpg"
+        },
+
+        {
+            name: "Amber Oud Gold Edition",
+            brand: "Al Haramain",
+            ml: "60 ml",
+            price: "$54.900",
+            image: "./imagenes/al-haramain-amber-oud-gold-edition.jpg"
+        },
+
+        {
+            name: "Amber Oud Carbon Edition",
+            brand: "Al Haramain",
+            ml: "60 ml",
+            price: "$49.900",
+            image: "./imagenes/al-haramain-amber-oud-carbon-edition.jpg"
+        },
+
+        {
+            name: "Santal 33",
+            brand: "Le Labo",
+            ml: "100 ml",
+            price: "$59.900",
+            image: "./imagenes/le-labo-santal-33.jpg"
+        },
+
+        {
+            name: "Set Pride",
+            brand: "Lattafa",
+            ml: "5 x 20 ml",
+            price: "$59.900",
+            image: "./imagenes/lattafa-pride-set.jpg"
         }
 
     ]

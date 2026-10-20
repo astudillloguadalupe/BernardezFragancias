@@ -152,9 +152,9 @@ const PRODUCTS = {
             ml: "100 ml",
             price: "$64.900",
             image: "./imagenes/bharara-king-gold-edition.jpg"
-        }
+        },
 
-                {
+        {
             name: "Hawas London For Him",
             brand: "Rasasi",
             ml: "100 ml",
@@ -301,9 +301,9 @@ const PRODUCTS = {
             ml: "100 ml",
             price: "$46.900",
             image: "./imagenes/rayhaan-divine.jpg"
-        }
+        },
 
-                {
+        {
             name: "Her Confession",
             brand: "Lattafa",
             ml: "100 ml",
@@ -513,8 +513,8 @@ const PRODUCTS = {
             ml: "100 ml",
             price: "$49.900",
             image: "./imagenes/french-avenue-aromatix-teas-me.jpg"
-        }
-                {
+        },
+        {
             name: "Royal Amber",
             brand: "Orientica",
             ml: "100 ml",
